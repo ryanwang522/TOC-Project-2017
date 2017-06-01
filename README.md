@@ -46,11 +46,7 @@ python3 app.py
 The initial state when chatting is set to `user`. 
 Moreover, I designed an actual initial state `init` that __accepts any input text__ to enter `user` state, in order to wake up the chatbot.
 
-``
-
 So you can simply wake the chatbot up by sending anythins like `Hello!` , `嗨～`.
-
-``
 
 Assume we're now in `user` state. Next, my bot will prompt a welcome message.
 After that, user can input `+1`, `+2`, `+3` to chat with the bot.
