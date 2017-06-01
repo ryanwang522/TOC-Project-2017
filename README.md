@@ -1,8 +1,6 @@
 # TOC Project 2017
 
-Template Code for TOC Project 2017
-
-A telegram bot based on a finite state machine
+A telegram bot based on a finite state machine.
 
 ## Setup
 
@@ -45,17 +43,25 @@ python3 app.py
 ![fsm](./img/show-fsm.png)
 
 ## Usage
-The initial state is set to `user`.
+The initial state when chatting is set to `user`. 
+Moreover, I designed an actual initial state `init` that __accepts any input text__ to enter `user` state, in order to wake up the chatbot.
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+``
 
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
+So you can simply wake the chatbot up by sending anythins like `Hello!` , `嗨～`.
 
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
+``
 
+Assume we're now in `user` state. Next, my bot will prompt a welcome message.
+After that, user can input `+1`, `+2`, `+3` to chat with the bot.
 
+Let's talk about the function of `+2` first, which is also the primary function of the bot.
+It's for **fortune analysis** based on constellation and Chinese zodiac/animal sign. User can choose one of the both when chatting with the bot.
+
+I write a **crawler to parse the fortune analysis website** to get the corresponding response for different user. Also use `reply_photo()` to interact
+with the users. 
+
+As for the function of `+1` or `+3` in `user` state, User can interact with the bot for fun.
+ 
 ## Author
-[Lee-W](https://github.com/Lee-W)
+[Ryan Wang](https://github.com/ryanwang522)
